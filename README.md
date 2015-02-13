@@ -1,4 +1,4 @@
-# (Children's Card Game)[http://magic.wizards.com/] Deck Builder
+# [Children's Card Game](http://magic.wizards.com/) Deck Builder
 
 ## MVP
   * Upload decklists
