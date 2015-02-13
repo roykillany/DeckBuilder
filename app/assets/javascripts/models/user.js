@@ -1,7 +1,9 @@
 ChildrensCardGame.Models.User = Backbone.Model.extend({
   urlRoot: "/api/users",
 
-
+  toJSON: function () {
+    return {user: this.attributes}
+  }
 
 });
 
@@ -31,7 +33,7 @@ ChildrensCardGame.Models.CurrentUser = ChildrensCardGame.Models.User.extend({
       dataType: "json",
       success: function (data) {
         model.set(data);
-        console.log(options.success);
+        Backbone.history.navigate("users/"+model.id, {trigger:true});
         options.success && options.success();
       },
       error: function(){
@@ -50,6 +52,7 @@ ChildrensCardGame.Models.CurrentUser = ChildrensCardGame.Models.User.extend({
       dataType: "json",
       success: function (data) {
         model.clear()
+        Backbone.history.navigate("", {trigger:true});
         options.success && options.success()
       }
     });

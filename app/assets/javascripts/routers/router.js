@@ -1,5 +1,6 @@
 ChildrensCardGame.Routers.Router = Backbone.Router.extend({
   initialize: function(options){
+    var that = this;
     this.$rootEl = options.$rootEl;
     this.collection = new ChildrensCardGame.Collections.Users();
     this.collection.fetch();

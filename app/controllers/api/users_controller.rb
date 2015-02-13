@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-
+  wrap_parameters false
   def index
     @users = User.all
     render :index
@@ -12,7 +12,6 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       sign_in!(@user)
       render :show
@@ -26,5 +25,5 @@ class Api::UsersController < ApplicationController
   def user_params
     self.params.require(:user).permit(:username, :email, :password)
   end
-  
+
 end

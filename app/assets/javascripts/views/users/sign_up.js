@@ -28,11 +28,10 @@ ChildrensCardGame.Views.SignUp = Backbone.View.extend({
       success: function() {
         ChildrensCardGame.currentUser.fetch();
         that.collection.add(that.model, {merge: true});
-        Backbone.history.navigate("", {trigger: true});
+        Backbone.history.navigate("#/users/"+that.model.id, {trigger: true});
       },
       error: function(data) {
         alert("Invalid Form Data");
-        console.log(data);
       }
     })
   }
