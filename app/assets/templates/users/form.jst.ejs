@@ -1,0 +1,14 @@
+<h2>Sign Up</h2>
+
+<form>
+  <label>
+  Username
+  <input name="user[username]" value="<%= user.escape('username')  %>">
+  </label>
+  <label>
+  Password
+  <input type="password" name="user[password]">
+  </label>
+
+  <button>Create Account</button>
+</form>
