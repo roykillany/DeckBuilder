@@ -6,7 +6,10 @@ window.ChildrensCardGame = {
   initialize: function() {
     this.currentUser = new ChildrensCardGame.Models.CurrentUser();
     this.currentUser.fetch();
-    // this.decks = new ChildrensCardGame.Collections.Models();
+    this.decks = new ChildrensCardGame.Collections.Decks();
+    this.header = new ChildrensCardGame.Views.Header({
+      el: "header"
+    });
     new ChildrensCardGame.Routers.Router({
       $rootEl: $("#content")
     })

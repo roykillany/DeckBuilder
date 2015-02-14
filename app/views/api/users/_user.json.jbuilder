@@ -5,4 +5,5 @@ user.decks do |deck|
 
   deck.cards.each do |card|
     json.(card, :deck_id, :name, :cmc)
+  end
 end

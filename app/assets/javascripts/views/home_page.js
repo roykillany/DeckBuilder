@@ -6,7 +6,7 @@ ChildrensCardGame.Views.HomePage = Backbone.View.extend({
 
   render: function () {
     var content = this.template({
-      userPage: "#/users/"+ChildrensCardGame.currentUser.id
+      userPage: "#users/"+ChildrensCardGame.currentUser.id
     });
     this.$el.html(content);
     return this;

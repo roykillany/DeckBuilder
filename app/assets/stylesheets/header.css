@@ -1,0 +1,21 @@
+div#header {
+  width: 100%;
+}
+
+/*Title*/
+div.welcome {
+  float: left;
+}
+
+/*Navigation*/
+nav {
+  float: right;
+}
+
+nav ul {
+}
+
+ul li {
+  float: left;
+  list-style: none;
+}

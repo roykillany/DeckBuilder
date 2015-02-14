@@ -1,0 +1,19 @@
+html, body, header, h1, h2, h3, h4, ul, li, a, footer, small, strong, nav {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: inherit;
+  box-sizing: inherit;
+  text-align: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+.group:after {
+  content: "";
+  clear: both;
+  display: block;
+}
