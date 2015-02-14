@@ -3,6 +3,15 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6, allow_nil: true }
   before_validation :ensure_session_token
 
+  has_many(
+    :decks,
+    class_name: "Deck",
+    foreign_key: :creator_id,
+    primary_key: :id
+  )
+
+  has_many :cards, through: :decks, source: :cards
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)
@@ -14,7 +23,7 @@ class User < ActiveRecord::Base
     @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
-  
+
   def is_password?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
